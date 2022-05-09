@@ -27,14 +27,15 @@ namespace PearsonTechnicalExercise
             Console.WriteLine("3. Fibonacci");
             Console.WriteLine("4. Coin Change");
             Console.WriteLine("5. Exit");
-            Console.WriteLine();
 
             while (true)
             {
                 try
                 {
+                    Console.WriteLine();
                     Console.Write("Please choose an option: ");
                     var option = Console.ReadLine();
+                    Console.WriteLine();
 
                     switch (option)
                     {
@@ -73,6 +74,7 @@ namespace PearsonTechnicalExercise
         {
             Console.Write("Input: ");
             var input = Console.ReadLine();
+            Console.WriteLine();
             var result = service.IsPalindrome(input);
             if (result.IsSuccessful)
             {
@@ -91,6 +93,7 @@ namespace PearsonTechnicalExercise
         {
             Console.Write("Input: ");
             var input = Console.ReadLine();
+            Console.WriteLine();
             var result = service.GetRomanNumerals(input);
             if (result.IsSuccessful)
             {
@@ -109,6 +112,7 @@ namespace PearsonTechnicalExercise
         {
             Console.Write("Enter n: ");
             var input = Console.ReadLine();
+            Console.WriteLine();
             var result = service.GetFibonacciSum(input);
             if (result.IsSuccessful)
             {
@@ -127,6 +131,7 @@ namespace PearsonTechnicalExercise
         {
             Console.Write("Enter a number in pence: ");
             var input = Console.ReadLine();
+            Console.WriteLine();
             var result = service.GetCoinChange(input);
             if (result.IsSuccessful)
             {
