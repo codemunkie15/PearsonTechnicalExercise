@@ -1,7 +1,11 @@
 ﻿namespace PearsonTechnicalExercise.Core.Palindromes
 {
+    /// <summary>
+    /// A service for dealing with palindromes.
+    /// </summary>
     internal class PalindromeService : IPalindromeService
     {
+        /// <inheritdoc/>
         public GenericResult<bool> IsPalindrome(string input)
         {
             if (string.IsNullOrEmpty(input))

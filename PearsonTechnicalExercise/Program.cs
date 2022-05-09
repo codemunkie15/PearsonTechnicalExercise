@@ -12,6 +12,7 @@ namespace PearsonTechnicalExercise
     {
         public static void Main(string[] args)
         {
+            // Create a .NET host so we can use dependency injection
             var host = Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {

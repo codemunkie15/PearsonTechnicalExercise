@@ -1,9 +1,13 @@
 ﻿namespace PearsonTechnicalExercise.Core.CoinChange
 {
+    /// <summary>
+    /// A service for dealing with coin change.
+    /// </summary>
     internal class CoinChangeService : ICoinChangeService
     {
         private readonly IEnumerable<int> coins = new[] { 1, 2, 5, 10, 20, 50, 100 };
 
+        /// <inheritdoc/>
         public GenericResult<IDictionary<int, int>> GetCoinChange(string penceString)
         {
             if (!int.TryParse(penceString, out var pence))
@@ -18,9 +22,9 @@
 
             var changeCoins = new List<int>();
 
-            foreach (var coin in coins.OrderByDescending(c => c))
+            foreach (var coin in coins.OrderByDescending(c => c)) // Check the highest coin first
             {
-                while (pence >= coin)
+                while (pence >= coin) // Keep adding change until no more of the coin will fit
                 {
                     changeCoins.Add(coin);
                     pence -= coin;

@@ -3,6 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace PearsonTechnicalExercise.Core.RomanNumerals
 {
+    /// <summary>
+    /// A service for dealing with roman numerals.
+    /// </summary>
     internal class RomanNumeralsService : IRomanNumeralsService
     {
         private readonly Dictionary<int, string> romanNumeralRules = new()
@@ -18,6 +21,7 @@ namespace PearsonTechnicalExercise.Core.RomanNumerals
 
         private const string ConsecutiveCharactersRegex = @"(.)\1{3,}";
 
+        /// <inheritdoc/>
         public GenericResult<string> GetRomanNumerals(string inputString)
         {
             if (!int.TryParse(inputString, out var input))

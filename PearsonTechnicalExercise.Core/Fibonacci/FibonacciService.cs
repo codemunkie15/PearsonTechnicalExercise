@@ -1,7 +1,11 @@
 ﻿namespace PearsonTechnicalExercise.Core.Fibonacci
 {
+    /// <summary>
+    /// A service for dealing with fibonacci numbers.
+    /// </summary>
     internal class FibonacciService : IFibonacciService
     {
+        /// <inheritdoc/>
         public GenericResult<int> GetFibonacciSum(string numberString)
         {
             if (!int.TryParse(numberString, out var n))
